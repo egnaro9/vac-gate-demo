@@ -31,7 +31,7 @@ a prop (`slugify.py` and its test); the exhibit is the gate.
 
 ## The four beats
 
-All four CI jobs are green — the failure beats *assert that the gate
+All four beats pass locally via `run_demo.sh`; the same four beats run as CI jobs on every push — the failure beats *assert that the gate
 fails*, with its named reason. A demo that went green while the gate
 stopped firing would be exactly the theater the gate exists to prevent.
 
