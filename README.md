@@ -1,7 +1,7 @@
 # vac-gate-demo
 
-**An agent opened this PR. CI will not go green without its capability
-contract.**
+**A staged PR, and a CI gate that will not go green without the agent's
+capability contract.**
 
 This is the minimum viable version of a policy: an agent that opens PRs
 carries a **capability contract** — a
