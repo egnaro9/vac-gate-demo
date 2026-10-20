@@ -5,7 +5,15 @@ name: capability-contract
 # 2-4 must invert the gate's exit code, so they drive gate.py from a
 # vac-gate checkout through run_demo.sh, which asserts nonzero + the
 # named reason.
-on: [push, pull_request]
+# Also on a weekly schedule, because beats 2-4 run against vac-gate's main branch and an
+# unpinned vac-protocol install: either can change with no push here, and a demo that only
+# runs on push would go red without anyone seeing it. workflow_dispatch allows a manual rerun.
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "23 9 * * 1"
+  workflow_dispatch:
 jobs:
   beat-1-contract-holds:
     runs-on: ubuntu-latest
